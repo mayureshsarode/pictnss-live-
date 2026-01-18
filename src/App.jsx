@@ -25,15 +25,30 @@ import Team from './pages/Team';
 import Magazine from './pages/Magazine';
 
 // Scroll to top component
+// const ScrollToTop = () => {
+//   const { pathname } = window.location;
+  
+//   React.useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, [pathname]);
+  
+//   return null;
+// };
+import { useLocation } from 'react-router-dom';
 const ScrollToTop = () => {
-  const { pathname } = window.location;
-  
+  const location = useLocation();
+
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
+    window.scrollTo({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'auto',
+     });
+  }, [location.key]);
+
   return null;
 };
+
 
 // 404 Not Found Page
 const NotFound = () => (
@@ -63,6 +78,7 @@ const NotFound = () => (
 function App() {
   return (
     <Router>
+      <ScrollToTop /> //New change
       <div className="App min-h-screen flex flex-col">
         {/* Navigation Bar */}
         <Navbar />
