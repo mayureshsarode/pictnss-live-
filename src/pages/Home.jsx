@@ -65,19 +65,19 @@ const recentActivities = [
   {
     id: "2025_taljai_shramadan",
     title: "Tree Plantation Drive",
-    date: "March 2025",
+    date: "February 2025",
     image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop",
   },
   {
-    id: 2,
+    id: "2025_blood_donation",
     title: "Blood Donation Camp",
-    date: "February 2025",
+    date: "March 2025",
     image: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&h=300&fit=crop",
   },
   {
-    id: 3,
+    id: "2025_cleanliness_drive",
     title: "Swachh Bharat Abhiyan",
-    date: "January 2025",
+    date: "October 2025",
     image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=300&fit=crop",
   },
 ];
@@ -274,7 +274,7 @@ const Home = () => {
 
           {/* Activity Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentActivities.map((activity, string) => (
+            {recentActivities.map((activity, index) => (
               <Link
                 key={activity.id}
                 to={`/activities/2025/${activity.id}`}
